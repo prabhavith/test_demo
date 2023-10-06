@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-learning gitss
-=======
-learning gits
->>>>>>> 2555cc7b46c6c939458eef56d9eb0c6fdbf35823
+learning git
