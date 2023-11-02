@@ -2,10 +2,6 @@
 
 touch frontend.log
 
-systemctl enable nginx &
-systemctl start nginx &
-systemctl status nginx &
-
 ls /usr/share/nginx/html/
 rm -rf /usr/share/nginx/html/*
 ls /usr/share/nginx/html/
@@ -27,6 +23,5 @@ echo 'proxy_http_version 1.1;' >> expense.conf
 echo 'location /api/ { proxy_pass http://localhost:8080/; }' >> expense.conf
 echo "expense.conf add status $?"
 
-systemctl restart nginx &
+systemctl restart nginx
 echo "nginx restart status $?"
-
