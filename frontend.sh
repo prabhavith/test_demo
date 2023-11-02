@@ -1,28 +1,28 @@
 #!/usr/bin/env bash
-dnf remove nginx -y
-dnf install nginx -y
 
-systemctl enable nginx
-systemctl start nginx
-systemctl status nginx
+touch frontend.log
 
-ls /usr/share/nginx/html/
-rm -rf /usr/share/nginx/html/*
-ls /usr/share/nginx/html/
+systemctl enable nginx &
+systemctl start nginx &
+systemctl status nginx &
 
-rm -rf /tmp/*
-ls /tmp
+ls /usr/share/nginx/html/ &
+rm -rf /usr/share/nginx/html/* &
+ls /usr/share/nginx/html/ &
 
-curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip
-ls /tmp
+rm -rf /tmp/* &
+ls /tmp &
 
-cd /usr/share/nginx/html
-unzip /tmp/frontend.zip
+curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip &
+ls /tmp &
 
-cd /etc/nginx/default.d
-rm -f /etc/nginx/default.d/expense.conf
-touch expense.conf
-echo 'proxy_http_version 1.1;' >> expense.conf
-echo 'location /api/ { proxy_pass http://localhost:8080/; }' >> expense.conf
+cd /usr/share/nginx/html &
+unzip /tmp/frontend.zip &
 
-systemctl restart nginx
+cd /etc/nginx/default.d &
+rm -f /etc/nginx/default.d/expense.conf &
+touch expense.conf &
+echo 'proxy_http_version 1.1;' >> expense.conf &
+echo 'location /api/ { proxy_pass http://localhost:8080/; }' >> expense.conf &
+
+systemctl restart nginx &
