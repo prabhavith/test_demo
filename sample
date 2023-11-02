@@ -3,10 +3,6 @@ git line
 local line
 local line2
 git line2
-<<<<<<< HEAD
-local line3
-=======
 
-git line3
->>>>>>> f895ccea43269ec0cc5bf4f67814e3f882cde6aa
-git local 4
+git line4
+>>>>>>> fadd7f077057f878d4923ad1796c3160c03fed75
