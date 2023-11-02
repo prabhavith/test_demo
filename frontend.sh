@@ -9,7 +9,7 @@ ls /usr/share/nginx/html/ >> frontend.log
 rm -rf /tmp/* >> frontend.log
 ls /tmp >> frontend.log
 
-curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip >> frontend.log
+curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip 2>> frontend.log
 ls /tmp >> frontend.log
 
 cd /usr/share/nginx/html >> frontend.log
